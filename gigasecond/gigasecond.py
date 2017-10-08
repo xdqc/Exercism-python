@@ -1,0 +1,1 @@
+import datetimedef add_gigasecond(start):    gigasecond = datetime.timedelta(seconds=1000000000)    return start + gigasecond
