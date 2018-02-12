@@ -1,4 +1,4 @@
-import re
+import string
 
 
 def cipher(c='', k=0):
@@ -11,6 +11,10 @@ def cipher(c='', k=0):
 
 
 def rotate(text='', key=0):
-    re.sub('\s+', ' ', text)
-    text = map(lambda c: cipher(c, key), text)
-    return ''.join(list(text))
+    trans_lowercase = string.ascii_lowercase[key:] + string.ascii_lowercase[:key]
+    trans_uppercase = string.ascii_uppercase[key:] + string.ascii_uppercase[:key]
+    table = str.maketrans(string.ascii_letters, trans_lowercase + trans_uppercase)
+    return str.translate(text, table)
+
+
+
