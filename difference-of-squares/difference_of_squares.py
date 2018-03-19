@@ -1,10 +1,13 @@
+import math
+
+
 def square_of_sum(count):
-    pass
+    return math.pow(sum(range(1, count+1)), 2)
 
 
 def sum_of_squares(count):
-    pass
+    return sum(list(map(lambda x: x*x, range(1, count+1))))
 
 
 def difference(count):
-    pass
+    return square_of_sum(count) - sum_of_squares(count)
